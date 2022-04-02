@@ -1,4 +1,4 @@
-from numpy import dot, random
+import numpy as np
 
 from decorators import timing
 
@@ -20,7 +20,7 @@ def matrix_dot_matrix(x, y):
 
 @timing
 def matrix_dot_matrix_numpy(x, y):
-    return dot(x, y)
+    return np.dot(x, y)
 
 
 X = [[1, 7, 3],
@@ -36,8 +36,8 @@ print(matrix_dot_matrix(X, Y))  # 1.5974044799804688e-05 sec
 print(matrix_dot_matrix_numpy(X, Y))  # 1.1920928955078125e-05 sec
 
 
-large_x = random.randint(0, 100, (50, 50))
-large_y = random.randint(0, 100, (50, 50))
+large_x = np.random.randint(0, 100, (50, 50))
+large_y = np.random.randint(0, 100, (50, 50))
 
 
 print(matrix_dot_matrix(large_x, large_y))  # 0.027988910675048828 sec
